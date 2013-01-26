@@ -48,6 +48,7 @@ angular.module('dangCircle', [])
                     setAttribute(transition, outcome, 'cy');
                     setStyle(transition, outcome, 'fill');
                     setStyle(transition, outcome, 'stroke');
+                    setStyle(transition, outcome, 'opacity');
                 }
 
                 function setupTransitions(shape, scope, propertyName) {
@@ -97,8 +98,10 @@ angular.module('dangCircle', [])
 
                 setStyle(circle, attrs, 'stroke');
                 setStyle(circle, attrs, 'fill');
+                setStyle(circle, attrs, 'opacity');
                 watchStyle(circle, scope, 'stroke');
                 watchStyle(circle, scope, 'fill');
+                watchStyle(circle, scope, 'opacity');
 
                 setOn(circle, scope, 'mouseover');
                 setOn(circle, scope, 'mouseout');

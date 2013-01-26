@@ -1,4 +1,4 @@
-/* DangJS v0.0.1 - 2013-01-26-12-01
+/* DangJS v0.0.2 - 2013-01-26-12-01
  * https://github.com/ryanoneill/dangjs
  * Copyright (c) 2013 Ryan O'Neill
  */
@@ -53,6 +53,7 @@ angular.module('dangCircle', [])
                     setAttribute(transition, outcome, 'cy');
                     setStyle(transition, outcome, 'fill');
                     setStyle(transition, outcome, 'stroke');
+                    setStyle(transition, outcome, 'opacity');
                 }
 
                 function setupTransitions(shape, scope, propertyName) {
@@ -102,8 +103,10 @@ angular.module('dangCircle', [])
 
                 setStyle(circle, attrs, 'stroke');
                 setStyle(circle, attrs, 'fill');
+                setStyle(circle, attrs, 'opacity');
                 watchStyle(circle, scope, 'stroke');
                 watchStyle(circle, scope, 'fill');
+                watchStyle(circle, scope, 'opacity');
 
                 setOn(circle, scope, 'mouseover');
                 setOn(circle, scope, 'mouseout');
