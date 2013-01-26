@@ -1,0 +1,21 @@
+{
+	"name": "dang",
+	"title": "DangJS",
+	"description": "An AngularJS based library for interacting with d3.js",
+	"version": "0.0.1",
+	"homepage": "https://github.com/ryanoneill/dangjs",
+	"author": {
+		"name": "Ryan O'Neill",
+		"email": "ryanoneill@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:ryanoneill/dangjs.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ryanoneill/dangjs/issues"
+	},
+	"licenses": [],
+	"dependencies": {},
+	"keywords": []
+}
