@@ -1,1 +1,103 @@
-My Github Page
+<!DOCTYPE html>
+<html ng-app="dangApp">
+<head>
+    <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script type="text/javascript" src="/app/js/dang.min.js"></script>
+    <script type="text/javascript">
+
+    function DangCtrl1($scope) {
+        $scope.fill = "white";
+        $scope.opacity = 0.5;
+        $scope.stroke = "gray";
+        $scope.cx = 50;
+        $scope.cy = 50;
+        $scope.r = 40;
+
+        $scope.mouseover = function () {
+            $scope.fill = "aliceblue";
+            $scope.opacity = 1.0;
+        };
+
+        $scope.mouseout = function () {
+            $scope.fill = "white";
+            $scope.opacity = 0.5;
+        };
+    }
+
+    function DangCtrl2($scope) {
+        $scope.fill = "white";
+        $scope.stroke = "gray";
+        $scope.cx = 50;
+        $scope.cy = 50;
+        $scope.r = 40;
+
+        $scope.transitions = [{ "name": "transition1", "delay": 100, "duration": 1000}];
+
+        $scope.transition1 = function (scope, outcome) {
+            outcome.r = 10;
+            outcome.cx = 30;
+            outcome.fill = "black";
+        };
+    }
+
+    function DangCtrl3($scope) {
+        $scope.stroke = "gray";
+        $scope.fill = "white";
+        $scope.r = 40;
+        $scope.cx = 50;
+        $scope.cy = 50;
+
+        $scope.mousedown_transitions = [
+            {
+                "name": "transition1",
+                "delay": 0,
+                "duration": 1000
+            },
+            {
+                "name" : "transition2",
+                "delay": 1000,
+                "duration": 1000
+            }
+        ];
+
+        $scope.transition1 = function (scope, outcome) {
+            outcome.r = 10;
+        };
+
+        $scope.transition2 = function (scope, outcome) {
+            outcome.r = 40;
+        };
+
+        $scope.mouseover = function () {
+            $scope.fill = "aliceblue";
+        };
+
+        $scope.mouseout = function () {
+            $scope.fill = "white";
+        };
+    }
+
+    </script>
+</head>
+<body>
+    <div id="viz1" ng-controller="DangCtrl1">
+        <div dang-svg id="svg1" width="100" height="100">
+            <div dang-circle></div>
+        </div>
+    </div>
+    <hr />
+    <div id="viz2" ng-controller="DangCtrl2">
+        <div dang-svg id="svg2" width="100" height="100">
+            <div dang-circle></div>
+        </div>
+    </div>
+    <hr />
+    <div id="viz3" ng-controller="DangCtrl3">
+        <div dang-svg id="svg3" width="100" height="100">
+            <div dang-circle></div>
+        </div>
+    </div>
+</body>
+</html>
